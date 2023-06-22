@@ -74,6 +74,12 @@ void RECEIVER::onMessage(const uint8_t *mac, const uint8_t *incomingData, int le
         digitalWrite(MOTOR_PIN, HIGH);
         Serial.println(MOTOR_HIGH);
     }
+    else
+    {
+        digitalWrite(MOTOR_PIN, LOW);
+        lastStateTime = 0;
+        Serial.println(MOTOR_LOW);
+    }
 
     lastStateTime = millis();
 };
